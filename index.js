@@ -3,9 +3,9 @@ const path = require('path')
 const inquirer = require('inquirer')
 
 
-const Manager = require();
-const Intern = require(); 
-const Engineer = require();
+const Manager = require("./library/manager");
+const Intern = require("./library/intern"); 
+const Engineer = require("./library/engineer");
 
 
 const team = []
