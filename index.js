@@ -38,6 +38,12 @@ const managerInputs = [
         message: 'email:',
         name: 'email'
     },
+
+    {
+        type: 'input',
+        message: 'office number:',
+        name: 'office'
+    },
 ]
 
 
@@ -59,6 +65,12 @@ const engineerInputs = [
         message: 'email:',
         name: 'email'
     },
+
+    {
+        type: 'input',
+        message: 'github url:',
+        name: 'github'
+    },
 ]
 
 
@@ -79,6 +91,12 @@ const internInputs = [
         type: 'input',
         message: 'email:',
         name: 'email'
+    },
+
+    {
+        type: 'input',
+        message: 'school:',
+        name: 'school'
     },
 ]
 
@@ -121,6 +139,7 @@ inquirer.prompt(managerInputs).then((data) =>
 data.name,
 data.id,
 data.email,
+data.office,
 
 team.push(manager)
     )})
@@ -134,6 +153,7 @@ team.push(manager)
     data.name,
     data.id,
     data.email,
+    data.github,
     
     team.push(engineer)
         )})
@@ -147,6 +167,7 @@ team.push(manager)
         data.name,
         data.id,
         data.email,
+        data.school,
         
         team.push(intern)
             )})
