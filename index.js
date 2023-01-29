@@ -113,3 +113,41 @@ function makeTeam(data) {
           break;
       }})
   }
+
+  function managerInfo() {
+inquirer.prompt(managerInputs).then((data) =>
+{
+    const manager = new Manager(
+data.name,
+data.id,
+data.email,
+
+team.push(manager)
+    )})
+  }
+
+
+  function engineerInfo() {
+    inquirer.prompt(engineerInputs).then((data) =>
+    {
+        const engineer = new Engineer(
+    data.name,
+    data.id,
+    data.email,
+    
+    team.push(engineer)
+        )})
+      }
+
+
+      function internInfo() {
+        inquirer.prompt(internInputs).then((data) =>
+        {
+            const intern = new Intern(
+        data.name,
+        data.id,
+        data.email,
+        
+        team.push(intern)
+            )})
+          }
