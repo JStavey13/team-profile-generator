@@ -13,7 +13,7 @@ const team = []
 const selectEmployee = [
     {
       type: "list",
-      choices: ["manager", "engineer", "intern", "None"],
+      choices: ["manager", "engineer", "intern", "none"],
       message: "Which kind of employee profile do you want to add?",
       name: "employees",
     },
@@ -81,3 +81,35 @@ const internInputs = [
         name: 'email'
     },
 ]
+
+
+
+function makeTeam(data) {
+    fs.writeFileSync("./dist/sample.html", data, 'utf-8');
+  }
+
+
+  function create() {
+    inquirer.prompt(selectEmployee).then((data) => {
+      const select = data.employees;
+
+      switch (select) {
+        case "manager":
+          managerInfo();
+          break;
+
+          case "engineer":
+          engineerInfo();
+          break;
+
+        case "intern":
+          internInfo();
+          break;
+        
+        case "none":
+          const html = render(team)
+          buildTeam(html);
+          
+          break;
+      }})
+  }
