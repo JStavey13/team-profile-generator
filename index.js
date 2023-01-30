@@ -104,7 +104,7 @@ const internInputs = [
 
 
 function makeTeam(data) {
-    fs.writeFileSync("./dist/sample.html", data, 'utf-8');
+    fs.writeFileSync("./assets/sample.html", data, 'utf-8');
   }
 
 
