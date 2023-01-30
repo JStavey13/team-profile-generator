@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const inquirer = require('inquirer')
 
+const page = require("./assets/template")
 
 const Manager = require("./library/manager");
 const Intern = require("./library/intern"); 
@@ -125,8 +126,8 @@ function makeTeam(data) {
           break;
         
         case "none":
-          const html = render(team)
-          buildTeam(html);
+          const html = page(team)
+          makeTeam(html);
           
           break;
       }})
@@ -140,10 +141,11 @@ data.name,
 data.id,
 data.email,
 data.office,
-
+    )
 team.push(manager)
-    )})
-  }
+create()
+  })
+}
 
 
   function engineerInfo() {
@@ -154,9 +156,10 @@ team.push(manager)
     data.id,
     data.email,
     data.github,
-    
+        )
     team.push(engineer)
-        )})
+    create()
+        })
       }
 
 
@@ -168,7 +171,11 @@ team.push(manager)
         data.id,
         data.email,
         data.school,
-        
+            )
         team.push(intern)
-            )})
+        create()
+            })
           }
+        
+
+create()
